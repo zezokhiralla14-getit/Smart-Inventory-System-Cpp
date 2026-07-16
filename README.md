@@ -48,6 +48,7 @@ This project was built with a strong focus on clean code and system design:
 ├── Inventory.cpp     # Inventory Class Implementation (Business Logic)
 └── .gitignore        # Specifies intentionally untracked files to ignore
 
+```
 ---
 
 ⚡ How to Build & Run

@@ -51,7 +51,7 @@ This project was built with a strong focus on clean code and system design:
 ```
 ---
 
-⚡ How to Build & Run
+## ⚡How to Build & Run
 
 Prerequisites
 
@@ -81,7 +81,7 @@ Bash
 
 ---
 
-Future Roadmap & Learning Outcomes
+## Future Roadmap & Learning Outcomes
 
 [ ] Implement Sorting Algorithms (sort products by price/quantity).
 

@@ -75,7 +75,7 @@ On macOS / Linux:
 
 ---
 
-## Future Roadmap & Learning Outcomes
+## 🧠 Future Roadmap & Learning Outcomes
 
 [ ] Implement Sorting Algorithms (sort products by price/quantity).
 

@@ -53,29 +53,23 @@ This project was built with a strong focus on clean code and system design:
 
 ## ⚡How to Build & Run
 
-Prerequisites
+**Prerequisites**
 
 Make sure you have a C++ compiler (like g++) installed on your machine.
 
-1. Compile the Project
+**1. Compile the Project**
 
 Open your terminal in the project directory and run:
 
-Bash
-
 g++ main.cpp Inventory.cpp Product.cpp -o program
 
-2. Run the Application
+**2. Run the Application**
 
 On Windows:
-
-Bash
 
 .\program
 
 On macOS / Linux:
-
-Bash
 
 ./program
 

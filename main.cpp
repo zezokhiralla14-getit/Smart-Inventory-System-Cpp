@@ -9,16 +9,18 @@ int main() {
 
   int choice;
   while(true) {
-    std::cout << "----- Smart Inventory System -----" << std::endl;
+    std::cout << "------ Smart Inventory System ------" << std::endl;
     std::cout << std::endl;
     std::cout << "1. Add a new product" << std::endl;
     std::cout << "2. Show all products" << std::endl;
     std::cout << "3. Search for a product with its ID" << std::endl;
     std::cout << "4. Edit a product" << std::endl;
     std::cout << "5. Delete a product" << std::endl;
-    std::cout << "6. LowStock check" << std::endl;
-    std::cout << "7. Exit" << std::endl;
-    std::cout << "Choose the proper choice (1-7) : ";
+    std::cout << "6. Sort the products" << std::endl;
+    std::cout << "7. LowStock check" << std::endl;
+    std::cout << "8. Exit" << std::endl;
+    std::cout << std::endl;
+    std::cout << "Choose ( 1 - 8 ) : ";
     std::cin >> choice;
     std::cout << std::endl;
 
@@ -118,19 +120,55 @@ int main() {
       }
       
       case 6: {
+
+        int sortChoice;
+
+        std::cout << "1. Sort by price" << std::endl;
+        std::cout << "2. Sort by quantity" << std::endl;
+        std::cout << std::endl;
+        std::cout << "Choose ( 1 or 2 ) : ";
+        std::cin >> sortChoice;
+
+        if(sortChoice == 1) {
+
+          myInventory.sortByPrice();
+          std::cout << std::endl;
+          std::cout << "--> The products have been sorted successfully" << std::endl;
+          myInventory.displayInventory();
+          
+        } else if (sortChoice == 2) {
+          
+          myInventory.sortByQuantity();
+          std::cout << std::endl;
+          std::cout << "--> The products have been sorted successfully" << std::endl;
+          myInventory.displayInventory();
+          
+        } else {
+          std::cout << std::endl;
+          std::cout << "Invalid choice,Please Enter 1 or 2" << std::endl;
+          std::cout << std::endl;
+          break;
+        }
+
+        break;
+
+      }
+
+      case 7: {
         myInventory.checkLowStock();
         std::cout << std::endl;
         break;
       }
-
-      case 7: {
+      
+      case 8: {
         myInventory.saveToFile();
         std::cout << "--> Thank you for using the system. GoodBye" << std::endl;
         return 0;
       }
-
+      
       default: {
-        std::cout << "Invalid choice! Please Enter a number from (1-7)" << std::endl;
+        std::cout << "Invalid choice! Please Enter a number from (1-8)" << std::endl;
+        std::cout << std::endl;
       }
     }
   }

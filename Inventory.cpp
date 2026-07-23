@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream> // File handling library
 #include <sstream> // String stream library
+#include <algorithm>
 
 void Inventory::addProduct(int p_id, const std::string& p_name, double p_price, int p_quantity) {
     
@@ -174,4 +175,16 @@ void Inventory::deleteProduct(int deleteId) {
 	std::cout << "--> Sorry, The product is not found" << std::endl;
 	std::cout << std::endl;
 
+}
+
+void Inventory::sortByPrice() {
+	std::sort(productList.begin(), productList.end(), [](const Product& a, const Product& b) {
+		return a.getPrice() < b.getPrice();
+	}); 
+}
+
+void Inventory::sortByQuantity() {
+	std::sort(productList.begin(), productList.end(), [](const Product& a, const Product& b) {
+		return a.getQuantity() < b.getQuantity();
+	}); 
 }

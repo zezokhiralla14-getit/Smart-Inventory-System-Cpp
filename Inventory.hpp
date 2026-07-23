@@ -28,5 +28,9 @@ class Inventory {
 	  void editProduct(int editId, double newPrice, int newQty);
 
 	  void deleteProduct(int deleteId);
+
+	  void sortByPrice();
+	  
+	  void sortByQuantity();
 	  
 };

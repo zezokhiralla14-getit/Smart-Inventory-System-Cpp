@@ -1,6 +1,6 @@
-#include "Inventory.hpp" // هذا الملف كافٍ جداً لجلب الـ Inventory والـ Product معاً!
-#include <iostream>      // للتعامل مع الإدخال والطباعة في الـ Menu
-#include <string>        // إذا كنت ستستقبل نصوصاً من المستخدم في الـ main
+#include "Inventory.hpp"
+#include <iostream>
+#include <string>
 
 int main() {
 

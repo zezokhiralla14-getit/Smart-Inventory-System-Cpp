@@ -77,7 +77,7 @@ On macOS / Linux:
 
 ## 🧠 Future Roadmap & Learning Outcomes
 
-[ ] Implement Sorting Algorithms (sort products by price/quantity).
+[✅] Implement Sorting Algorithms (sort products by price/quantity).
 
 [ ] Migrate the flat-file storage to an SQLite database.
 

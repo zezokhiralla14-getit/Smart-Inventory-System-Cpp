@@ -1,13 +1,27 @@
 #include "Inventory.hpp"
 #include <iostream>
 #include <string>
+#include <limits> // Required for std::numeric_limits
+
+int getValidInt(const std::string& prompt) {
+    int value;
+    while (true) {
+        std::cout << prompt;
+        if (std::cin >> value) {
+            return value; // Valid numeric input received
+        } else {
+            std::cout << "--> Invalid input! Please enter a valid number.\n\n";
+            std::cin.clear(); // 1. Clear the stream error state
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 2. Discard invalid characters from buffer
+        }
+    }
+}
 
 int main() {
 
   Inventory myInventory;
   myInventory.loadFromFile();
 
-  int choice;
   while(true) {
     std::cout << "------ Smart Inventory System ------" << std::endl;
     std::cout << std::endl;
@@ -20,9 +34,7 @@ int main() {
     std::cout << "7. LowStock check" << std::endl;
     std::cout << "8. Exit" << std::endl;
     std::cout << std::endl;
-    std::cout << "Choose ( 1 - 8 ) : ";
-    std::cin >> choice;
-    std::cout << std::endl;
+    int choice = getValidInt("Choose ( 1 - 8 ) : ");
 
     switch (choice) {
 
@@ -32,8 +44,7 @@ int main() {
         std::string name;
         double price;
 
-        std::cout << "Enter product's id : ";
-        std::cin >> id;
+        id = getValidInt("Enter product's id : ");
 
         if (myInventory.isProductExists(id)) {
             std::cout << "\n--> Error: A product with ID [" << id << "] already exists! Please try again with a unique ID.\n" << std::endl;
@@ -44,8 +55,7 @@ int main() {
         std::cin >> name;
         std::cout << "Enter product's price : ";
         std::cin >> price;
-        std::cout << "Enter product's quantity : ";
-        std::cin >> qty;
+        qty = getValidInt("Enter product's quantity : ");
 
         myInventory.addProduct(id, name, price, qty);
 
@@ -64,34 +74,22 @@ int main() {
       }
       
       case 3: {
-
-        int searchId;
-
         std::cout << std::endl;
-        std::cout << "Enter the ID you're looking for : ";
-        std::cin >> searchId;
-
+        int searchId = getValidInt("Enter the ID you're looking for : ");
         myInventory.searchProduct(searchId);
-
         break;
-
       }
 
       case 4: {
 
-        int editId;
-        std::cout << "Enter the product's ID you want to edit : ";
-        std::cin >> editId;
+        int editId = getValidInt("Enter the product's ID you want to edit : ");
 
         if(myInventory.isProductExists(editId)) {
-
             double newPrice;
             int newQty;
             std::cout << "Enter the new price : ";
             std::cin >> newPrice;
-            std::cout << "Enter the new quantity : ";
-            std::cin >> newQty;
-
+            newQty = getValidInt("Enter the new quantity : ");
             myInventory.editProduct(editId, newPrice, newQty);
 
         } else {
@@ -107,27 +105,18 @@ int main() {
       }
 
       case 5: {
-
-        int deleteId;
-
-        std::cout << "Enter the product's ID you want to delete : ";
-        std::cin >> deleteId;
-
+        int deleteId = getValidInt("Enter the product's ID you want to delete : ");
         myInventory.deleteProduct(deleteId);
-
         break;
-
       }
       
       case 6: {
 
         int sortChoice;
-
         std::cout << "1. Sort by price" << std::endl;
         std::cout << "2. Sort by quantity" << std::endl;
         std::cout << std::endl;
-        std::cout << "Choose ( 1 or 2 ) : ";
-        std::cin >> sortChoice;
+        sortChoice = getValidInt("Choose ( 1 or 2 ) : ");
 
         if(sortChoice == 1) {
 

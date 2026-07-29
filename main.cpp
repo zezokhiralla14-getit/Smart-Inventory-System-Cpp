@@ -10,6 +10,7 @@ int getValidInt(const std::string& prompt) {
         if (std::cin >> value) {
             return value; // Valid numeric input received
         } else {
+            std::cout << std::endl;
             std::cout << "--> Invalid input! Please enter a valid number.\n\n";
             std::cin.clear(); // 1. Clear the stream error state
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 2. Discard invalid characters from buffer

@@ -79,7 +79,7 @@ On macOS / Linux:
 
 - [✅] **Sorting Algorithms:** Sort products dynamically by price or quantity using C++ Lambdas. 
 
-- [ ] **Robust Input Validation:** Handle invalid user inputs gracefully (e.g., non-numeric menu choices) to prevent runtime crashes.
+- [✅] **Robust Input Validation:** Handle invalid user inputs gracefully (e.g., non-numeric menu choices) to prevent runtime crashes.
 
 - [ ] **Smart Search Engine:** Search products by name or partial name (case-insensitive) instead of ID only.
 

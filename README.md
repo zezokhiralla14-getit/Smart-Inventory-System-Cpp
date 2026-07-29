@@ -77,8 +77,16 @@ On macOS / Linux:
 
 ## 🧠 Future Roadmap & Learning Outcomes
 
-[✅] Implement Sorting Algorithms (sort products by price/quantity).
+- [✅] **Sorting Algorithms:** Sort products dynamically by price or quantity using C++ Lambdas. 
 
-[ ] Migrate the flat-file storage to an SQLite database.
+- [ ] **Robust Input Validation:** Handle invalid user inputs gracefully (e.g., non-numeric menu choices) to prevent runtime crashes.
 
-[ ] Add categories/tags for better product filtering.
+- [ ] **Smart Search Engine:** Search products by name or partial name (case-insensitive) instead of ID only.
+
+- [ ] **Categories & Filtering:** Group products by category/tags and filter by stock availability (e.g., Low Stock Alerts).
+      
+- [ ] **Database Migration:** Migrate flat-file storage to an **SQLite3** relational database for scalable data persistence.
+      
+- [ ] **Data Export & Reports:** Generate inventory summary reports and support exporting data to **CSV** format.
+      
+- [ ] **Activity Logging:** Log system actions (Add, Edit, Delete) with timestamps to an external `.log` file for auditing.

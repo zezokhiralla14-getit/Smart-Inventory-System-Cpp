@@ -81,7 +81,7 @@ On macOS / Linux:
 
 - [✅] **Robust Input Validation:** Handle invalid user inputs gracefully (e.g., non-numeric menu choices) to prevent runtime crashes.
 
-- [ ] **Smart Search Engine:** Search products by name or partial name (case-insensitive) instead of ID only.
+- [✅] **Smart Search Engine:** Search products by name or partial name (case-insensitive) instead of ID only.
 
 - [ ] **Categories & Filtering:** Group products by category/tags and filter by stock availability (e.g., Low Stock Alerts).
       

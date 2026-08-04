@@ -148,6 +148,7 @@ int main() {
       }
 
       case 7: {
+        std::cout << std::endl;
         myInventory.checkLowStock();
         std::cout << std::endl;
         break;

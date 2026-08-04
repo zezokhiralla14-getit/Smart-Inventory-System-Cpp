@@ -4,6 +4,14 @@
 #include <fstream> // File handling library
 #include <sstream> // String stream library
 #include <algorithm>
+#include <cctype> // For std::tolower
+
+std::string tolower(std::string str) {
+  for (char& c : str) {
+    c = std::tolower(c);
+  }
+  return str;
+}
 
 void Inventory::addProduct(int p_id, const std::string& p_name, double p_price, int p_quantity) {
     
@@ -187,4 +195,30 @@ void Inventory::sortByQuantity() {
 	std::sort(productList.begin(), productList.end(), [](const Product& a, const Product& b) {
 		return a.getQuantity() < b.getQuantity();
 	}); 
+}
+
+void Inventory::searchByName(const std::string& searchName) const {
+	std::string lowerSearchName = tolower(searchName);
+	bool found = false;
+
+	for(const Product& p : productList) {
+		std::string lowerProductName = tolower(p.getName());
+		if(lowerProductName.find(lowerSearchName) != std::string::npos) {
+			if(!found) {
+				std::cout << std::endl;
+				std::cout << "--> The following products match your search:" << std::endl;
+				std::cout << std::endl;
+			}
+			p.displayProduct();
+			std::cout << std::endl;
+			found = true;
+		}
+	}
+
+	if(!found) {
+		std::cout << std::endl;
+		std::cout << "--> No products found matching your search." << std::endl;
+		std::cout << std::endl;
+	}
+	
 }

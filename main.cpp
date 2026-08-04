@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <limits> // Required for std::numeric_limits
+#include <algorithm>
+#include <cctype>
 
 int getValidInt(const std::string& prompt) {
     int value;
@@ -28,7 +30,7 @@ int main() {
     std::cout << std::endl;
     std::cout << "1. Add a new product" << std::endl;
     std::cout << "2. Show all products" << std::endl;
-    std::cout << "3. Search for a product with its ID" << std::endl;
+    std::cout << "3. Search for a product with its Name" << std::endl;
     std::cout << "4. Edit a product" << std::endl;
     std::cout << "5. Delete a product" << std::endl;
     std::cout << "6. Sort the products" << std::endl;
@@ -75,9 +77,10 @@ int main() {
       }
       
       case 3: {
-        std::cout << std::endl;
-        int searchId = getValidInt("Enter the ID you're looking for : ");
-        myInventory.searchProduct(searchId);
+        std::string searchName;
+        std::cout << "\nEnter product name (or part of it) to search: ";
+        std::getline(std::cin >> std::ws, searchName); // Using std::ws to consume any leading whitespace before reading the input
+        myInventory.searchByName(searchName);
         break;
       }
 

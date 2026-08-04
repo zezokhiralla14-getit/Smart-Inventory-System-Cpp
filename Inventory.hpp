@@ -33,4 +33,5 @@ class Inventory {
 	  
 	  void sortByQuantity();
 	  
+	  void searchByName(const std::string& searchName) const;
 };
